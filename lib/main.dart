@@ -2,10 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
-  MaterialApp(
-    home: BallPage(),
-  ),
-);
+      MaterialApp(
+        home: BallPage(),
+      ),
+    );
 
 class BallPage extends StatelessWidget {
   @override
