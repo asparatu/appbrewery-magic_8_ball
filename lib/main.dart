@@ -1,10 +1,11 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
-      MaterialApp(
-        home: BallPage(),
-      ),
-    );
+  MaterialApp(
+    home: BallPage(),
+  ),
+);
 
 class BallPage extends StatelessWidget {
   @override
@@ -26,10 +27,20 @@ class Ball extends StatefulWidget {
 }
 
 class _BallState extends State<Ball> {
+  int ballNumber = 1;
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Image.asset('assets/images/ball1.png'),
+      child: FlatButton(
+        onPressed: () {
+          setState(() {
+            ballNumber = Random().nextInt(5) + 1;
+            print(ballNumber);
+          });
+        },
+        child: Image.asset('assets/images/ball$ballNumber.png'),
+      ),
     );
   }
 }
